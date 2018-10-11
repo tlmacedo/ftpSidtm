@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from pkcs11 import lib, TokenNotRecognised, TokenNotPresent, Attribute, ObjectClass
+#from pkcs11 import lib, TokenNotRecognised, TokenNotPresent, Attribute, ObjectClass
 
 # from cafeperfeito.models import Tabcolaborador
 
