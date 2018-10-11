@@ -4,5 +4,5 @@ from cafeperfeito import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^login/$', views.login, name='login'),
-    url(r'^certificado/$', views.certificado, name='certificado')
+#    url(r'^certificado/$', views.certificado, name='certificado')
 ]
