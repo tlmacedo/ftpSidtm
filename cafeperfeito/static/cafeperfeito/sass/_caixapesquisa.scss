@@ -1,0 +1,40 @@
+.caixa-pesquisa {
+  position: fixed;
+  top: -200px;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  @include transition(.25s);
+
+  &.open {
+    top: 0;
+  }
+
+  .pesquisa-icone {
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    .material-icons {
+      color: $corPrincipal;
+    }
+  }
+
+  .fecha-pesquisa {
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 14px;
+  }
+
+  @include placeholder {
+    color: $corPrincipal;
+  }
+
+  input[type="text"] {
+    color: $corPrincipal;
+    width: 100%;
+    font-size: 16px;
+    padding: 25px 60px 23px 56px;
+    border: none;
+  }
+}

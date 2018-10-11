@@ -1,0 +1,112 @@
+@import "variaveis.scss";
+@import "mixins.scss";
+
+@mixin barras($id, $cor, $tempo: ($id - 9)/10) {
+  //@if($id == 1) {
+  //  .barra-animada#{$id} {
+  //    background-color: $cor;
+  //  }
+  //}@else {
+    .barra-animada#{$id} {
+      background-color: $cor;
+      @include animacao-generica(#{$tempo}s, -delay);
+    }
+  //}
+}
+
+.carregamento-em-barras {
+  //border: 1px solid red;
+  width: $larguraCarregandoBarras;
+  height: $alturaCarregandoBarras;
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  $altura: $alturaCarregandoBarras + 30px;
+  top: calc(100% - #{$altura});
+  $largura: $larguraCarregandoBarras / 2;
+  left: calc(50% - #{$largura});
+  //-webkit-transform: translateY(-50%) translateX(-50%);
+
+  & > div {
+    border: 1px solid rebeccapurple;
+    height: 100%;
+    width: 10px;
+    display: inline-block;
+    float: left;
+    margin-left: 2px;
+    @include animacao-generica(atraso 0.8s infinite ease-in-out);
+    //-webkit-animation: delay 0.8s infinite;
+    //animation: delay 0.8s infinite;
+  }
+
+  @include barras(1, #754fa0);
+  @include barras(2, #09b7bf);
+  @include barras(3, #90d36b);
+  @include barras(4, #f2d40d);
+  @include barras(5, #fcb12b);
+}
+
+@include keyframes(stretch){
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}
+
+
+@include keyframes(atraso){
+  0% {
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }
+  100% {
+    transform: scaleY(0.05);
+    -webkit-transform: scaleY(0.05);
+  }
+}
+
+//@-webkit-keyframes delay {
+//    0%, 40%, 100% {
+//      -webkit-transform: scaleY(0.05);
+//    }
+//    20% {
+//      -webkit-transform: scaleY(1);
+//    }
+//}
+//
+//@keyframes delay {
+//  0%, 40%, 100% {
+//    transform: scaleY(0.05);
+//    -webkit-transform: scaleY(0.05);
+//  }
+//  20% {
+//    transform: scaleY(1);
+//    -webkit-transform: scaleY(1);
+//  }
+//}
+
+
+
+
+
+
+
+
+
+

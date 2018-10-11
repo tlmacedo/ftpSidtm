@@ -1,0 +1,57 @@
+
+h1 {
+  text-align: center;
+  padding: 15px;
+}
+
+.caixa-login {
+  padding: 15px;
+  $larguraCaixa: width;
+  label {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: $larguraCaixa - 20;
+    display: inline-block;
+  }
+  @include placeholder {
+    color: $corPrincipal;
+  }
+
+  input[type="password"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: $larguraCaixa - 20;
+    color: $corPrincipal;
+    font-size: 16px;
+    //padding: 25px 60px 23px 56px;
+    //border: none;
+  }
+  button, select, optgroup {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: $larguraCaixa - 20;
+  }
+}
+
+.caixa-imagem-login {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.fecha-caixa-login {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+img.imagem-login {
+  width: 20%;
+  border-radius: 50%;
+  background-color: rgba(240, 240, 240, 0.7);
+}
+
+.botao-abre-login {
+  margin: 0 auto;
+}

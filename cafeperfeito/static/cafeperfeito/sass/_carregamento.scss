@@ -1,0 +1,35 @@
+@import "variaveis.scss";
+
+//.md-carregamento {
+//  @each $key, $val in $cores-sistema {
+//    .pl-#{$key} {
+//      stroke: $val;
+//    }
+//  }
+//}
+
+.carregamento {
+  display: inline-block;
+  position: relative;
+  $altura: $alturaLogoCarregando / 2;
+  top: calc(50% - #{$altura});
+  .animado {
+    width: $larguraLogoCarregando;
+    height: $alturaLogoCarregando;
+    -webkit-animation: container-rotate 1568ms linear infinite;
+    -moz-animation: container-rotate 1568ms linear infinite;
+    -o-animation: container-rotate 1568ms linear infinite;
+    animation: container-rotate 1568ms linear infinite;
+  }
+  .estatico {
+    //border: 1px solid yellow;
+    width: $larguraLogoCarregando;
+    height: $alturaLogoCarregando;
+    background: url("../img/sistema/logo.png");
+    background-size: 92%;
+  }
+}
+
+
+
+

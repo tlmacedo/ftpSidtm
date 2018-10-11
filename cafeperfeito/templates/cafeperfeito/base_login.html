@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block titulo_page %}Login{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+
+    <!-- Favicon-->
+    <link rel="icon" href="{% static 'cafeperfeito/img/sistema/Favicons/favicon.ico' %}" type="image/x-icon"/>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
+          type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css"/>
+
+    <!-- Bootstrap Core Css -->
+    <link rel="stylesheet" href="{% static 'cafeperfeito/bootstrap-3.3.7/css/bootstrap.min.css' %}" type="text/css"/>
+    {#    <link href="{% static 'cafeperfeito/css/normalize.css' %}" rel="stylesheet"/>#}
+
+
+    <!-- Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link rel="stylesheet" href="{% static 'cafeperfeito/css/sidtm.min.css' %}" type="text/css"/>
+
+
+    {#    <style>#}
+    {#        body {#}
+    {#            padding: 15px;#}
+    {#        }#}
+    {##}
+    {#        button {#}
+    {#            background-color: #FF6600;#}
+    {#            color: white;#}
+    {#            padding: 14px 20px;#}
+    {#            margin: 8px 0;#}
+    {#            border: none;#}
+    {#            cursor: pointer;#}
+    {#            width: 100%;#}
+    {#        }#}
+    {##}
+    {#        button:hover {#}
+    {#            opacity: 0.8;#}
+    {#        }#}
+    {##}
+    {#        .imgcontainer {#}
+    {#            text-align: center;#}
+    {#            margin: 24px 0 12px 0;#}
+    {#            position: relative;#}
+    {#        }#}
+    {##}
+    {#        img.login {#}
+    {#            width: 20%;#}
+    {#            border-radius: 50%;#}
+    {#            background-color: rgba(245, 245, 245, 0.7);#}
+    {#        }#}
+    {##}
+    {#        input[type=text], input[type=password] {#}
+    {#            width: 100%;#}
+    {#            padding: 12px 20px;#}
+    {#            margin: 8px 0;#}
+    {#            display: inline-block;#}
+    {#            border: 1px solid #ccc;#}
+    {#            box-sizing: border-box;#}
+    {#        }#}
+    {#    </style>#}
+</head>
+<body class="tema-cafe-perfeito background-page">
+<h1>Café Perfeito</h1>
+<button class="botao-abre-login" onclick="document.getElementById('caixa-login').style.display='block'"
+        style="width:auto;">
+    fazer login
+</button>
+
+<div id="caixa-login" class="modal caixa-login">
+    <form name="formlogin" class="modal-content animate" method="post">
+        {% csrf_token %}
+        <div class="caixa-imagem-login">
+            <div class="fecha-caixa-login material-icons"
+                 onclick="document.getElementById('caixa-login').style.display='none'">close
+            </div>
+            <img class="imagem-login" src="{% static 'cafeperfeito/img/sistema/logo.png' %}" alt="Logo">
+        </div>
+
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </form>
+</div>
+
+{#<script>#}
+{#    // Get the modal#}
+{#    var modal = document.getElementById('id01');#}
+{#    // When the user clicks anywhere outside of the modal, close it#}
+{#    window.onclick = function (event) {#}
+{#        if (event.target == modal) {#}
+{#            modal.style.display = "none";#}
+{#        }#}
+{#    }#}
+{#</script>#}
+
+<!-- Jquery Core Js -->
+<script src="{% static 'cafeperfeito/js/jquery-3.2.1.min.js' %}"></script>
+
+<!-- Bootstrap Core Js -->
+<script src="{% static 'cafeperfeito/bootstrap-3.3.7/js/npm.js' %}"></script>
+<script src="{% static 'cafeperfeito/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
