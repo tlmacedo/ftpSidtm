@@ -1,4 +1,5 @@
-import OpenSSL
+# -*- coding: utf-8 -*-
+# import OpenSSL
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
