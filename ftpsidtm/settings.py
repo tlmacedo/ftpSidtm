@@ -76,12 +76,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cafeperfeito',
-        'USER': 'cafeperfeito',
-        'PASSWORD': 'Tlm487901',
-        'HOST': 'mysql.cafeperfeito.com.br',
+        'USER': 'root',
+        'PASSWORD': 'Tlm$487901',
+        'HOST': 'localhost',
         'PORT': '3306',
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
