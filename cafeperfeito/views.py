@@ -74,16 +74,16 @@ def login(request):
     return render(request, 'cafeperfeito/login.html', {'usuarios': usuarios})
 
 
-def token():
-    lib_token = lib('/usr/local/lib/libeTPKcs11.dylib')  # TokenSafeNet5100
-    for slot in lib_token.get_slots(True):
-        try:
-            token = slot.get_token()
-            return token
-        except TokenNotPresent:
-            print('Erro: TokenNotPresent!')
-            return None
-        except TokenNotRecognised:
-            print('Erro: TokenNotRecognised!')
-            return None
-        print('ainda está no loop? será')
+# def token():
+#     lib_token = lib('/usr/local/lib/libeTPKcs11.dylib')  # TokenSafeNet5100
+#     for slot in lib_token.get_slots(True):
+#         try:
+#             token = slot.get_token()
+#             return token
+#         except TokenNotPresent:
+#             print('Erro: TokenNotPresent!')
+#             return None
+#         except TokenNotRecognised:
+#             print('Erro: TokenNotRecognised!')
+#             return None
+#         print('ainda está no loop? será')
