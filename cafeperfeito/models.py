@@ -394,6 +394,9 @@ class Sisuf(models.Model):
         managed = False
         db_table = 'sisUf'
 
+    def __str__(self):
+        return self.sigla
+
 
 class Sisunidadecomercial(models.Model):
     descricao = models.CharField(max_length=30)
